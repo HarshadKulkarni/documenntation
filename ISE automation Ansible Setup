@@ -1,0 +1,148 @@
+:set relativenumber
+Force Homebrew to ignore SSL verification:
+
+export HOMEBREW_CURLRC=1
+echo "-k" >> ~/.curlrc
+
+Then run:
+
+/bin/bash -c "$(curl -fsSLk https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+brew install pipenv
+pipenv install --python 3.14
+pipenv install ansible
+pipenv install ciscoisesdk
+pipenv install netmiko
+pipenv install paramiko #--skipped
+pipenv install jmespath #
+pipenv install boto3
+pipenv install botocore
+pipenv install amazon.aws
+pipenv install amazon.cli
+pipenv install requests
+
+
+Workflow
+Here’s a clear **step-by-step workflow** for going from `pipenv shell` to VS Code, testing, and pushing to Git:
+
+***
+
+### ✅ 1. Activate Your Pipenv Environment
+
+In your project folder:
+
+```bash
+pipenv shell
+```
+
+This activates the virtual environment.
+
+***
+
+### ✅ 2. Open the Project in VS Code
+
+From the same folder:
+
+```bash
+code .
+```
+
+This launches VS Code in the current directory.
+
+**Tip:**
+
+*   Make sure VS Code has the **Python extension** installed.
+*   When VS Code opens, select the **Python interpreter** for your Pipenv environment:
+    *   Press `Ctrl+Shift+P` → type `Python: Select Interpreter` → choose the one under `.venv` or Pipenv.
+
+***
+
+### ✅ 3. Create or Open Your Python Files
+
+*   Add your scripts or modules inside the project folder.
+*   Example: `main.py` or `app.py`.
+
+***
+
+### ✅ 4. Test Your Code
+
+You can:
+
+*   Run directly in VS Code using the **Run button** or `F5`.
+*   Or run in the terminal (still inside `pipenv shell`):
+
+```bash
+python main.py
+```
+
+If you have tests:
+
+```bash
+pytest
+```
+
+(Install pytest if needed: `pipenv install pytest`)
+
+***
+
+### ✅ 5. Commit Changes to Git
+
+Initialize Git if not done:
+
+```bash
+git init
+```
+
+Add files:
+
+```bash
+git add .
+```
+
+Commit:
+
+```bash
+git commit -m "Initial commit or your message"
+```
+
+***
+
+### ✅ 6. Push to Remote Repository
+
+Add remote:
+
+```bash
+git remote add origin <your-repo-URL>
+```
+
+Push:
+
+```bash
+git branch -M main
+git push -u origin main
+```
+
+***
+
+### ✅ Summary Workflow
+
+```bash
+pipenv shell
+code .
+# (Work in VS Code, test code)
+git add .
+git commit -m "your message"
+git push -u origin main
+```
+
+***
+
+Do you want me to give you a **single automated script** that:
+✔ Activates Pipenv  
+✔ Opens VS Code  
+✔ Runs tests  
+✔ Commits and pushes to Git
+
+Or a **VS Code settings snippet** to auto-select your Pipenv interpreter?
+
+
