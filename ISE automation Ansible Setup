@@ -22,6 +22,18 @@ pipenv install amazon.cli
 pipenv install requests
 
 
+# 1) Install/upgrade the Cisco ISE collection
+ansible-galaxy collection install cisco.ise --upgrade
+
+# 2) Verify the module is visible
+ansible-doc -t module cisco.ise.network_device_info
+
+# 3) If ansible-doc can't see it, print your collection path(s)
+ansible-config dump | grep -i collections_paths
+# Optionally set it explicitly (adapt to your venv/path)
+export ANSIBLE_COLLECTIONS_PATHS="$HOME/.ansible/collections:/usr/share/ansible/collections"
+
+
 Workflow
 Here’s a clear **step-by-step workflow** for going from `pipenv shell` to VS Code, testing, and pushing to Git:
 
