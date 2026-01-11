@@ -1,9 +1,12 @@
 # documenntation
 
-To install Homebrew, open Terminal or your favorite OS X terminal emulator and run
+```
+Force Homebrew to ignore SSL verification
 
-```js
+export HOMEBREW_CURLRC=1
+echo "-k" >> ~/.curlrc
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+Then run:
 
+/bin/bash -c "$(curl -fsSLk https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
