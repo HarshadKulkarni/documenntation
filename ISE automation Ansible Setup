@@ -33,6 +33,11 @@ ansible-config dump | grep -i collections_paths
 # Optionally set it explicitly (adapt to your venv/path)
 export ANSIBLE_COLLECTIONS_PATHS="$HOME/.ansible/collections:/usr/share/ansible/collections"
 
+# ansible doc
+https://galaxy.ansible.com/ui/repo/published/cisco/ise/docs/
+
+#Ansible ISE Repo
+https://github.com/CiscoISE/ansible-ise
 
 Workflow
 Here’s a clear **step-by-step workflow** for going from `pipenv shell` to VS Code, testing, and pushing to Git:
